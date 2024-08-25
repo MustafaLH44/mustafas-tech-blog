@@ -1,0 +1,22 @@
+{{!-- Post View --}}
+<h1>{{post.title}}</h1>
+<p>By {{post.username}} on {{post.date_created}}</p>
+<p>{{post.content}}</p>
+
+<h2>Comments</h2>
+{{#each post.comments}}
+    <div class="comment">
+        <p>{{this.content}} - By {{this.username}} on {{this.date_created}}</p>
+    </div>
+{{/each}}
+
+{{#if logged_in}}
+    <form id="comment-form">
+        <textarea id="comment" name="comment" placeholder="Leave a comment..." required></textarea>
+        <button type="submit">Submit</button>
+    </form>
+{{else}}
+    <p><a href="/login">Log in</a> to leave a comment.</p>
+{{/if}}
+
+<script src="/js/comment.js"></script>

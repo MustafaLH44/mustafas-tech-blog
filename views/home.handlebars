@@ -1,0 +1,9 @@
+{{!-- Home View --}}
+<h1>Welcome to Tech Blog</h1>
+
+{{#each posts}}
+    <div class="post">
+        <h2><a href="/post/{{this.id}}">{{this.title}}</a></h2>
+        <p>By {{this.username}} on {{this.date_created}}</p>
+    </div>
+{{/each}}
