@@ -1,0 +1,18 @@
+[
+    {
+      "title": "The Rise of JavaScript Frameworks",
+      "content": "JavaScript frameworks like React, Angular, and Vue have transformed front-end development by providing structured ways to build web applications.",
+      "user_id": 1
+    },
+    {
+      "title": "Understanding Asynchronous JavaScript",
+      "content": "Asynchronous programming in JavaScript is crucial for handling operations like API requests, setTimeout, and promises, ensuring non-blocking code execution.",
+      "user_id": 2
+    },
+    {
+      "title": "Mastering CSS Grid and Flexbox",
+      "content": "CSS Grid and Flexbox are powerful layout modules that provide flexibility and control in designing responsive web pages.",
+      "user_id": 3
+    }
+  ]
+  
