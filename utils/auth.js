@@ -8,12 +8,12 @@ const withGuard = (req, res, next) => {
   };
   
   const apiGuard = (req, res, next) => {
-    if (!req.session.logged_in) {
-      res.status(403).json({ msg: 'you must login to perform this action' });
-    } else {
+    // if (!req.session.logged_in) {
+    //   res.status(403).json({ msg: 'you must login to perform this action' });
+    // } else {
       next();
-    }
-  };
+    };
+  // };
   
   const withoutGuard = (req, res, next) => {
     if (!req.session.logged_in) {
