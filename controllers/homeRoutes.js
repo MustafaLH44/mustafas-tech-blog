@@ -2,7 +2,7 @@ const router = require('express').Router();
 const { Post, User } = require('../models');
 
 // GET / - Homepage
-router.get('/homepage', async (req, res) => {
+router.get('/', async (req, res) => {
   try {
     const postData = await Post.findAll({
       include: [{ model: User, attributes: ['username'] }],
@@ -10,7 +10,7 @@ router.get('/homepage', async (req, res) => {
 
     const posts = postData.map((post) => post.get({ plain: true }));
 
-    res.render('/homepage.handlebars', {
+    res.render('/', {
       posts,
       logged_in: req.session.logged_in,
     });
@@ -22,17 +22,17 @@ router.get('/homepage', async (req, res) => {
 // GET /login
 router.get('/login', (req, res) => {
   if (req.session.logged_in) {
-    res.redirect('/dashboard.handlebars');
+    res.redirect('/homepage');
     return;
   }
 
-  res.render('/login.handlebars');
+  res.render('/login');
 });
 
 // GET /signup
 router.get('/signup', (req, res) => {
   if (req.session.logged_in) {
-    res.redirect('/signup.handlebars');
+    res.redirect('/signup');
     return;
   }
 
