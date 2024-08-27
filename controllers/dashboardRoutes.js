@@ -13,7 +13,7 @@ router.get('/', apiGuard, async (req, res) => {
 
     const posts = postData.map((post) => post.get({ plain: true }));
 
-    res.render('dashboard', {
+    res.render('dashboard.handlebars', {
       posts,
       logged_in: req.session.logged_in,
     });
@@ -24,7 +24,7 @@ router.get('/', apiGuard, async (req, res) => {
 
 // GET /dashboard/new
 router.get('/new', apiGuard, (req, res) => {
-  res.render('new-post', {
+  res.render('post.handlebars', {
     logged_in: req.session.logged_in,
   });
 });
@@ -36,7 +36,7 @@ router.get('/edit/:id', apiGuard, async (req, res) => {
 
     const post = postData.get({ plain: true });
 
-    res.render('edit-post', {
+    res.render('post.handlebars', {
       post,
       logged_in: req.session.logged_in,
     });
